@@ -1,4 +1,4 @@
-import { Button, View } from "react-native";
+import { Button, View, Text } from "react-native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { RootStackParamsList } from "../../App";
 export type props = {
@@ -7,6 +7,7 @@ export type props = {
 const NowButton: React.FC<props> = ({ navigation }) => {
   return (
     <View>
+      <Text>T</Text>
       <Button
         title="Click Me"
         onPress={() => navigation.navigate("DisplayPicture")}
