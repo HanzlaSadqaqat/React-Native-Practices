@@ -29,8 +29,8 @@ const DisplayPicture: React.FC<props> = ({ navigation }) => {
   };
   return (
     <View style={[styles.container, styles.horizontal]}>
-      <ActivityIndicator color={"red"} />
-      <Button title="Click Button" color={"red"} onPress={buttonClicked} />
+      {/* <ActivityIndicator color={"red"} /> */}
+      <Button title="Select File" onPress={buttonClicked} />
       {file ? (
         <Image
           source={{ uri: file[0].uri }}
@@ -45,7 +45,18 @@ const DisplayPicture: React.FC<props> = ({ navigation }) => {
         <></>
       )}
       <TouchableOpacity onPress={buttonClicked} style={styles.button}>
-        <Text style={{ backgroundColor: "white", margin: 10, color: "red" }}>
+        <Text
+          style={{
+            backgroundColor: "white",
+            borderColor: "gray",
+
+            textAlign: "center",
+            justifyContent: "center",
+            borderWidth: 1,
+            padding: 5,
+            color: "red",
+          }}
+        >
           Input
         </Text>
       </TouchableOpacity>
@@ -65,8 +76,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 10,
-    backgroundColor: "blue",
-    alignItems: "center",
+    backgroundColor: "white",
+    // alignItems: "center",
     justifyContent: "center",
   },
   text: {
