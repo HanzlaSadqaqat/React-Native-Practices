@@ -3,7 +3,7 @@ import React from "react";
 
 const AddFood = () => {
   return (
-    <View>
+    <View>  
       <Text>AddFood</Text>
     </View>
   );
