@@ -3,7 +3,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { View } from "react-native";
 import DisplayPicture from "./src/components/DisplayPicture";
 import NowButton from "./src/components/Button";
-export type RootStackParamsList = {
+export type  RootStackParamsList = {
   DisplayPicture: undefined;
   Button: undefined;
 };
