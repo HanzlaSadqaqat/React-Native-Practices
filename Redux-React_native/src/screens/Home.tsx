@@ -1,38 +1,35 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import MapView, { Marker } from 'react-native-maps';
+import { View, Text, TouchableOpacity } from "react-native";
+import { StackNavigationProp } from "@react-navigation/stack";
 
-function Home() {
-    return (
-        <View><Text>Home</Text>
-            <MapView
-                style={styles.map}
-                initialRegion={{
-                    latitude: 37.78825, // Initial latitude for the map
-                    longitude: -122.4324, // Initial longitude for the map
-                    latitudeDelta: 0.0922, // Zoom level (adjust as needed)
-                    longitudeDelta: 0.0421, // Zoom level (adjust as needed)
-                }}
-            >
-                {/* Example marker */}
-                <Marker
-                    coordinate={{ latitude: 37.78825, longitude: -122.4324 }}
-                    title="Example Marker"
-                    description="This is an example marker"
-                />
-                {/* Add more markers or shapes as needed */}
-            </MapView>        </View>
-    );
-}
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    map: {
-        ...StyleSheet.absoluteFillObject,
-    },
-});
+import React from "react";
+import { RootStackParamsList } from "../navigation/StackNavigation";
+export type props = {
+  navigation: StackNavigationProp<RootStackParamsList>;
+};
+const Home: React.FC<props> = ({ navigation }) => {
+  const mapFunction = () => {
+    navigation.navigate("HomeMap");
+  };
+  return (
+    <View>
+      <TouchableOpacity
+        style={{
+          paddingVertical: 10,
+          paddingHorizontal: 20,
+          justifyContent: "center",
+          alignItems: "center",
+          borderRadius: 100,
+          borderColor: "#e88e20",
+          backgroundColor: "white",
+
+          borderWidth: 2,
+        }}
+        onPress={mapFunction}
+      >
+        <Text style={{ color: "#e88e20" }}>Map</Text>
+      </TouchableOpacity>
+    </View>
+  );
+};
 
 export default Home;
